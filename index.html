@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧪 高二化学 · 选择性必修1 · 互动备课盒</title>
+<style>
+:root{
+  --navy:#0E1A2B; --panel:#16263d; --gold:#FFC94D; --teal:#37D6C9; --pink:#FF7AA8;
+  --blue:#5BA8FF; --purple:#B98BFF; --green:#5BD97A; --red:#FF6B6B;
+  --txt:#EAF1FB; --mut:#9FB2CC; --line:#2c4a72;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:radial-gradient(1300px 700px at 50% -12%,#1d3358,var(--navy));color:var(--txt);line-height:1.7}
+.wrap{max-width:1120px;margin:0 auto;padding:20px 14px 70px}
+.cover{text-align:center;padding:26px 14px 14px}
+.cover h1{font-size:1.9rem;color:var(--gold)}
+.cover .sub{color:var(--teal);margin-top:8px;font-size:1rem}
+.cover .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--mut);
+  font-size:.8rem;padding:5px 12px;border-radius:20px;margin:8px 4px 0}
+.layout{display:grid;grid-template-columns:210px 1fr;gap:16px;margin-top:18px}
+.nav{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;align-self:start;position:sticky;top:14px}
+.nav .navh{font-size:.8rem;color:var(--mut);margin-bottom:8px}
+.nav .navgrp{font-size:.72rem;color:var(--gold);margin:10px 0 6px;border-top:1px solid var(--line);padding-top:8px;font-weight:700}
+.nav .navgrp:first-of-type{margin-top:0;border-top:none;padding-top:0}
+.nav button{display:block;width:100%;text-align:left;background:var(--navy);border:1px solid var(--line);
+  color:var(--txt);border-radius:12px;padding:10px 12px;margin-bottom:6px;cursor:pointer;font-size:.88rem;transition:.18s}
+.nav button:hover{border-color:var(--teal)}
+.nav button.on{background:linear-gradient(135deg,var(--gold),#ff9d3d);color:var(--navy);font-weight:700;border-color:var(--gold)}
+.main{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.topic{display:none}
+.topic.on{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.toph{font-size:1.35rem;color:var(--gold);margin-bottom:4px}
+.tops{color:var(--mut);font-size:.88rem;margin-bottom:14px}
+.stage{background:#0b1626;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;margin-bottom:14px}
+.stage canvas,.stage svg{width:100%;max-width:560px;height:auto;background:#0b1626;border-radius:10px}
+.readout{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.readout .r{background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:8px 14px;font-size:.9rem}
+.readout .r b{color:var(--gold);font-size:1.05rem}
+.ctrl{background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.ctrl .crow{display:flex;align-items:center;gap:12px;margin:10px 0;flex-wrap:wrap}
+.ctrl label{width:150px;font-size:.9rem;color:var(--mut)}
+.ctrl input[type=range]{flex:1;min-width:140px;accent-color:var(--teal)}
+.ctrl .val{width:70px;text-align:right;color:var(--gold);font-weight:700}
+.ctrl .mode{display:flex;gap:8px;flex-wrap:wrap}
+.ctrl .mode button{background:var(--navy);border:1px solid var(--line);color:var(--mut);border-radius:10px;padding:7px 14px;cursor:pointer}
+.ctrl .mode button.on{background:var(--teal);color:var(--navy);font-weight:700;border-color:var(--teal)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{background:var(--navy);border:1px solid var(--line);color:var(--mut);border-radius:20px;padding:7px 16px;cursor:pointer;font-size:.88rem}
+.tabs button.on{background:var(--gold);color:var(--navy);font-weight:700;border-color:var(--gold)}
+.tabp{background:var(--navy);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:.94rem;min-height:90px}
+.tabp h4{color:var(--teal);margin:0 0 8px}
+.tabp ul{margin-left:20px}
+.tabp li{margin:5px 0}
+.tabp .fm{background:#0b1626;border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 10px 10px 0;margin:8px 0;font-size:1rem}
+.prep{background:#13233a;border:1px dashed var(--purple);border-radius:12px;padding:14px;margin-top:6px}
+.prep .ph{color:var(--purple);font-weight:700;margin-bottom:8px}
+.foot{text-align:center;color:var(--mut);font-size:.78rem;margin-top:24px;line-height:1.9}
+@media (max-width:860px){.layout{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cover">
+    <h1>🧪 高二化学 · 选择性必修1 · 互动备课盒</h1>
+    <div class="sub">人民教育出版社 2019 版《化学反应原理》· 点击即用 · 动态仿真 · 真实计算 · 内建备课卡</div>
+    <div>
+      <span class="tag">⚗️ 交互仿真 11 模块</span><span class="tag">📕 覆盖化学反应原理四大主题</span>
+      <span class="tag">📐 概念·公式·生活·迷思 四维讲解</span><span class="tag">📝 老师备课卡</span>
+      <span class="tag">📴 离线可用 · 投屏 / 平板 / 手机</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="nav">
+      <div class="navh">📚 选择单元</div>
+      <div class="navgrp">第一章 化学反应的热效应</div>
+      <button class="on" data-t="thermo">① 反应热与焓变</button>
+      <button data-t="hess">② 盖斯定律</button>
+      <div class="navgrp">第二章 化学反应速率与化学平衡</div>
+      <button data-t="rate">③ 化学反应速率</button>
+      <button data-t="equil">④ 化学平衡·勒夏特列</button>
+      <button data-t="direct">⑤ 化学反应的方向</button>
+      <div class="navgrp">第三章 水溶液中的离子反应与平衡</div>
+      <button data-t="ionize">⑥ 弱电解质的电离平衡</button>
+      <button data-t="phtab">⑦ 水的电离与溶液 pH</button>
+      <button data-t="hydrolysis">⑧ 盐类的水解</button>
+      <button data-t="ksp">⑨ 沉淀溶解平衡</button>
+      <div class="navgrp">第四章 化学反应与电能</div>
+      <button data-t="galvanic">⑩ 原电池</button>
+      <button data-t="electrolysis">⑪ 电解池</button>
+    </div>
+
+    <div class="main">
+      <!-- ① 反应热与焓变 -->
+      <div class="topic on" id="thermo">
+        <div class="toph">① 反应热与焓变：ΔH = ΣE(断键) − ΣE(成键)</div>
+        <div class="tops">化学反应的本质是旧键断裂（吸收能量）与新键形成（释放能量）。切换反应，比较两根能量柱的高低：断键吸得多、成键放得少 → 吸热；反之为放热。</div>
+        <div class="stage"><canvas id="cvTh" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">断键吸收 = <b id="thAbs">679</b> kJ</div>
+          <div class="r">成键释放 = <b id="thRel">862</b> kJ</div>
+          <div class="r">反应热 ΔH = <b id="thDH">−183</b> kJ/mol</div>
+          <div class="r">类型：<b id="thState">放热反应</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>反应示例</label><div class="mode"><button class="on" id="tR1">H₂+Cl₂=2HCl</button><button id="tR2">N₂+3H₂=2NH₃</button><button id="tR3">2H₂+O₂=2H₂O(g)</button></div></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>反应热（焓变）ΔH</b> = H(生成物) − H(反应物)。放热反应 ΔH&lt;0，吸热反应 ΔH&gt;0。</li><li>微观本质：断开旧键吸收能量，形成新键释放能量，两者差值就是反应热。</li><li><b>热化学方程式</b>必须注明物质状态 (g)/(l)/(s)，ΔH 与系数一一对应。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">ΔH = ΣE(反应物键能) − ΣE(生成物键能)　单位：kJ/mol</div>例：H−H 436、Cl−Cl 243、H−Cl 431 kJ/mol → H₂(g)+Cl₂(g)=2HCl(g)：ΔH=(436+243)−2×431=−183 kJ/mol。放热反应 ΔH 为负——成键释放多于断键吸收。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>暖宝宝：铁粉缓慢氧化放热，续航十小时。</li><li>火箭用液氢液氧：燃烧释放巨大反应热转化为推力。</li><li>自热米饭：生石灰遇水放热，加热饭菜。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「放热反应不用加热就能发生」→ 引发反应要先越过分歧点（活化能），点火只是"起跑"。</li><li>❌「ΔH 忘写正负号」→ 放热 ΔH&lt;0、吸热 ΔH&gt;0，正负号是结论的一半。</li><li>❌「键能就是反应热」→ 键能是断开 1 mol 键吸收的能量，ΔH 是两类键能的差。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会用键能计算 ΔH，并判断放热/吸热。<br><b>开场提问：</b>"燃烧明明放热，为什么还要先点火？"<br><b>活动：</b>切换三个反应，让学生先预测两柱高低再看图；追问"若生成 4 mol HCl，ΔH 变多少？"（系数翻倍 ΔH 翻倍）。<br><b>总结金句：</b>"断键吸、成键放，差值正负定热向。"</div></div>
+      </div>
+
+      <!-- ② 盖斯定律 -->
+      <div class="topic" id="hess">
+        <div class="toph">② 盖斯定律：ΔH 与路径无关</div>
+        <div class="tops">反应热只由始态和终态决定，与一步完成还是分步完成无关。拖动两步的 ΔH，看"直连"总变与"分步"之和始终相等。</div>
+        <div class="stage"><svg id="svHe" viewBox="0 0 560 260"></svg></div>
+        <div class="readout">
+          <div class="r">A→B：ΔH₁ = <b id="heH1">+60</b> kJ/mol</div>
+          <div class="r">B→C：ΔH₂ = <b id="heH2">−20</b> kJ/mol</div>
+          <div class="r">A→C：ΔH总 = ΔH₁+ΔH₂ = <b id="heSum">+40</b> kJ/mol</div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>ΔH₁（A→B，kJ/mol）</label><input type="range" id="sH1" min="-100" max="100" step="5" value="60"><span class="val" id="vH1">60</span></div>
+          <div class="crow"><label>ΔH₂（B→C，kJ/mol）</label><input type="range" id="sH2" min="-100" max="100" step="5" value="-20"><span class="val" id="vH2">-20</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>盖斯定律</b>：化学反应的反应热只与反应体系的始态和终态有关，与反应是一步完成还是分步进行无关。</li><li>本质：焓是状态函数，"能量守恒"在热化学中的体现。</li><li>用途：计算难以直接测定或无法发生的反应热（如 C + ½O₂ = CO）。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">ΔH(总) = ΔH₁ + ΔH₂ + ΔH₃ + …</div>使用方法：把目标反应"拼"成已知反应的代数和——方程式怎么加减，ΔH 就怎么加减（含符号与系数）。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>从一楼爬到五楼，走楼梯还是坐电梯，上升高度相同——焓变同理。</li><li>煤先气化再燃烧与直接燃烧，释放的总热量相同。</li><li>营养学计算食物"卡路里"正用到盖斯定律的思想。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「方程式乘 2，ΔH 不变」→ ΔH 随系数同步翻倍，还要注意方向反转时 ΔH 变号。</li><li>❌「分步反应热相加时顺序无所谓」→ 必须对齐目标反应的方向与系数再相加。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会用盖斯定律由已知反应求未知反应热。<br><b>开场提问：</b>"有些反应太快或太慢测不了热，怎么办？"<br><b>活动：</b>拖动 ΔH₁、ΔH₂，验证台阶和恒等于直连；再反过来用台阶差求隐藏的 ΔH。<br><b>总结金句：</b>"殊途同归，热量只看两端。"</div></div>
+      </div>
+
+      <!-- ③ 化学反应速率 -->
+      <div class="topic" id="rate">
+        <div class="toph">③ 化学反应速率：v = Δc / Δt</div>
+        <div class="tops">拖动温度、切换催化剂，看浓度—时间曲线变陡变缓：曲线越陡反应越快，半衰期越短。</div>
+        <div class="stage"><canvas id="cvRa" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">速率常数 k = <b id="raK">0.020</b> s⁻¹</div>
+          <div class="r">起始速率 v₀ = k·c₀ = <b id="raV">0.020</b> mol/(L·s)</div>
+          <div class="r">半衰期 t½ = <b id="raHalf">34.6</b> s</div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>温度 T（K）</label><input type="range" id="sRT" min="298" max="398" step="5" value="298"><span class="val" id="vRT">298</span></div>
+          <div class="crow"><label>催化剂</label><div class="mode"><button class="on" id="raNo">不加</button><button id="raCat">加 MnO₂（k×4）</button></div></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>化学反应速率</b> v = Δc/Δt（通常取正值），常用单位 mol/(L·s)。</li><li>同一反应用不同物质表示的速率之比 = 化学计量数之比。</li><li>影响因素：浓度、温度、压强（气体）、催化剂、接触面积。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">v = Δc/Δt　｜　一级反应：c(t) = c₀·e^(−kt)，t½ = ln2/k</div>范特霍夫经验规律：温度每升高 10℃，速率约增大到原来的 2~4 倍。本面板取每 10K 翻倍；催化剂使速率常数增大（图中 ×4）。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>食物放冰箱减慢变质速率；高压锅升温加快炖煮。</li><li>双氧水消毒时冒泡慢，滴入血液（含过氧化氢酶）立即沸腾般放氧。</li><li>汽车三元催化器把有害气体快速转化为无害气体。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「速率一定是正值且用同一物质表示都一样」→ 数值随所选物质不同，比例=系数比。</li><li>❌「升温只加快吸热方向」→ 正、逆反应速率都增大，只是增大的倍数不同。</li><li>❌「催化剂越多速率越快」→ 达到饱和后效果不再增强。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会计算 v，能说明温度与催化剂对速率的影响。<br><b>开场提问：</b>"食物放冰箱为什么不容易坏？"<br><b>活动：</b>拖温度对比曲线斜率，开催化剂看半衰期缩短为 1/4。<br><b>总结金句：</b>"温浓催面大，速率往上爬。"</div></div>
+      </div>
+
+      <!-- ④ 化学平衡 -->
+      <div class="topic" id="equil">
+        <div class="toph">④ 化学平衡：Q 与 K 的博弈</div>
+        <div class="tops">以合成氨 N₂+3H₂ ⇌ 2NH₃（放热）为例：拖动温度、压强，或"注入"NH₃ 扰动平衡，观察 Q 与 K 的关系和移动方向。</div>
+        <div class="stage"><canvas id="cvEq" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">平衡常数 K = <b id="eqK">100.0</b></div>
+          <div class="r">浓度商 Q = <b id="eqQ">0.04</b></div>
+          <div class="r">平衡移动方向：<b id="eqDir">正向进行</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>温度 T（K，升温 K 减小）</label><input type="range" id="sET" min="300" max="400" step="5" value="300"><span class="val" id="vET">300</span></div>
+          <div class="crow"><label>压强（atm，加压正移）</label><input type="range" id="sEP" min="1" max="10" step="1" value="1"><span class="val" id="vEP">1</span></div>
+          <div class="crow"><label>注入 c(NH₃)（mol/L）</label><input type="range" id="sEN" min="0" max="0.4" step="0.05" value="0.2"><span class="val" id="vEN">0.2</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li>化学平衡状态的特征：<b>逆、等、动、定、变</b>。</li><li><b>平衡常数 K</b> 只与温度有关；Q&lt;K 正向移动，Q&gt;K 逆向移动，Q=K 恰好平衡。</li><li><b>勒夏特列原理</b>：改变条件，平衡向"减弱"这种改变的方向移动（减弱不抵消）。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">K = c²(NH₃) / [c(N₂)·c³(H₂)]　（只与温度有关）</div>本仿真：c(N₂)=c(H₂)=1 mol/L 固定，K(T)=100×2^(−(T−300)/10)（放热反应升温 K 减小）；加压时体积压缩，Q 增大但 Δn&lt;0 使平衡正移。固体与纯液体不写入 K。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>合成氨工业：适度低温 + 高压 + 催化剂 + 及时分离 NH₃。</li><li>开汽水瓶：减压后 CO₂ 溶解平衡逆向，气泡涌出。</li><li>高原煮饭温度不够——气压影响沸点，也影响气相平衡。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「加催化剂平衡正向移动」→ 催化剂同等加快正逆速率，只缩短达平衡时间。</li><li>❌「平衡时正逆反应都停止了」→ 是"动态平衡"，v正=v逆≠0。</li><li>❌「增大压强一定正向移动」→ 向气体分子数减小的方向移动，本反应正向分子数减小才正移。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会用 Q 与 K 判断平衡移动方向，说出加压/升温对合成氨的影响。<br><b>开场提问：</b>"为什么要及时把 NH₃ 液化分离走？"<br><b>活动：</b>先升温度看 K 下降，再注入 NH₃ 制造 Q&gt;K，让学生预测方向再验证。<br><b>总结金句：</b>"Q 比 K 定去向，减弱改变不抵消。"</div></div>
+      </div>
+
+      <!-- ⑤ 化学反应的方向 -->
+      <div class="topic" id="direct">
+        <div class="toph">⑤ 化学反应的方向：ΔG = ΔH − TΔS</div>
+        <div class="tops">焓与熵"两条腿"共同决定方向。拖动 ΔH、ΔS、T，看 ΔG–T 直线何时落入自发区（绿色）。</div>
+        <div class="stage"><canvas id="cvDi" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">ΔG = ΔH − TΔS = <b id="diG">−40</b> kJ/mol</div>
+          <div class="r">结论：<b id="diState">能自发进行</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>ΔH（kJ/mol）</label><input type="range" id="sDH" min="-200" max="200" step="10" value="-100"><span class="val" id="vDH">-100</span></div>
+          <div class="crow"><label>ΔS（J/(mol·K)）</label><input type="range" id="sDS" min="-400" max="400" step="10" value="-200"><span class="val" id="vDS">-200</span></div>
+          <div class="crow"><label>温度 T（K）</label><input type="range" id="sDT" min="0" max="1000" step="10" value="300"><span class="val" id="vDT">300</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>焓判据</b>：体系倾向能量降低（ΔH&lt;0）；<b>熵判据</b>：体系倾向混乱度增大（ΔS&gt;0）。</li><li>复合判据：<b>ΔG = ΔH − TΔS &lt; 0</b> 时反应能自发进行。</li><li>"自发"只表示趋势，不代表反应一定快（还看速率）。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">ΔG = ΔH − TΔS（ΔS 单位 J/(mol·K)，代入时注意 ×10⁻³ 换算 kJ）</div>四种组合：ΔH&lt;0、ΔS&gt;0 → 任意温度自发；ΔH&gt;0、ΔS&lt;0 → 任意温度不自发；ΔH、ΔS 同号时存在转变温度 T*=ΔH/ΔS。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>冰在室温自动融化：ΔH&gt;0 但 ΔS&gt;0，高温下 ΔG&lt;0。</li><li>NH₄NO₃ 溶于水吸热仍自发——熵驱动的典型。</li><li>室温下水 spontaneous 结冰不会发生——熵减且吸热双重不利。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「放热反应才能自发」→ 冰融化、N₂O₅ 分解都是吸热自发，熵在帮忙。</li><li>❌「ΔH&lt;0、ΔS&gt;0 还要低温才自发」→ 这是最"铁"的自发组合，任意温度都自发。</li><li>❌「ΔS 单位直接代入」→ ΔS 是 J/(mol·K)，ΔH 是 kJ/mol，必须换算。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会用 ΔG 判断方向，能求转变温度。<br><b>开场提问：</b>"吸热反应就一定不能发生吗？举一个反例。"<br><b>活动：</b>固定 ΔH、ΔS，拖 T 找直线与零轴的交点（转变温度）。<br><b>总结金句：</b>"焓熵合力定方向，温度天平两端晃。"</div></div>
+      </div>
+
+      <!-- ⑥ 电离平衡 -->
+      <div class="topic" id="ionize">
+        <div class="toph">⑥ 弱电解质的电离平衡：Ka 与电离度</div>
+        <div class="tops">醋酸是弱酸，部分电离。拖动浓度与温度，看分子与离子的"势力消长"：越稀越电离，升温促电离。</div>
+        <div class="stage"><svg id="svIo" viewBox="0 0 560 260"></svg></div>
+        <div class="readout">
+          <div class="r">Ka = <b id="ioKa">1.75×10⁻⁵</b></div>
+          <div class="r">c(H⁺) = <b id="ioCH">1.31×10⁻³</b> mol/L</div>
+          <div class="r">电离度 α = <b id="ioAlpha">1.31</b> %</div>
+          <div class="r">pH = <b id="ioPH">2.88</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>初始浓度 c（mol/L）</label><input type="range" id="sIC" min="0.01" max="1" step="0.01" value="0.1"><span class="val" id="vIC">0.10</span></div>
+          <div class="crow"><label>温度（℃）</label><input type="range" id="sIT" min="0" max="100" step="5" value="25"><span class="val" id="vIT">25</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li>强电解质完全电离；<b>弱电解质部分电离</b>，存在电离平衡：CH₃COOH ⇌ CH₃COO⁻ + H⁺。</li><li><b>电离常数 Ka</b> 只与温度有关，Ka 越大酸性越强。</li><li><b>电离度 α</b> = 已电离分子数/初始分子数 ×100%；稀释促进电离。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">Ka = c(H⁺)·c(Ac⁻)/c(HAc)　｜　c(H⁺) ≈ √(Ka·c)（近似）</div>0.1 mol/L 醋酸（25℃）：c(H⁺)≈1.31×10⁻³ mol/L → pH≈2.88，α≈1.3%。"越稀越电离"：稀释 10 倍 α 增大但 c(H⁺) 减小。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>食醋含 3%~5% 醋酸，弱酸部分电离所以"酸而不烈"。</li><li>碳酸饮料开盖减压 CO₂ 逸出，平衡逆移酸性减弱。</li><li>人体血液缓冲对维持 pH 7.35~7.45 稳态。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「稀释后电离度增大，酸性增强」→ α 增大但 c(H⁺) 减小，pH 变大。</li><li>❌「Ka 大小说明溶液浓度大」→ Ka 是性质常数，与浓度无关。</li><li>❌「升温抑制电离」→ 电离吸热，升温促进电离。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会用 Ka 近似式求 c(H⁺)、pH 与 α，理解"越稀越电离"。<br><b>开场提问：</b>"pH 相同的盐酸和醋酸，谁更浓？为什么？"<br><b>活动：</b>拖浓度从 1 到 0.01，读 α 上升而 pH 上升（酸性减弱）。<br><b>总结金句：</b>"稀了电离多，离子反倒薄。"</div></div>
+      </div>
+
+      <!-- ⑦ 水的电离与 pH -->
+      <div class="topic" id="phtab">
+        <div class="toph">⑦ 水的电离与溶液 pH：pH = −lg c(H⁺)</div>
+        <div class="tops">水的离子积 Kw 是酸碱的"总开关"。拖动 pH 看色带与液体颜色；升温看"中性点"其实不在 7。</div>
+        <div class="stage"><canvas id="cvPH" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">c(H⁺) = <b id="phH">1.0×10⁻⁷</b> mol/L</div>
+          <div class="r">c(OH⁻) = <b id="phOH">1.0×10⁻⁷</b> mol/L</div>
+          <div class="r">Kw = <b id="phKw">1.0×10⁻¹⁴</b></div>
+          <div class="r">酸碱性：<b id="phState">中性</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>pH</label><input type="range" id="sPH2" min="0" max="14" step="0.1" value="7"><span class="val" id="vPH2">7.0</span></div>
+          <div class="crow"><label>温度（℃，影响 Kw）</label><input type="range" id="sPT" min="10" max="100" step="5" value="25"><span class="val" id="vPT">25</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li>水是极弱的电解质：H₂O ⇌ H⁺ + OH⁻，<b>Kw = c(H⁺)·c(OH⁻)</b>，25℃ 时为 10⁻¹⁴。</li><li>Kw 只与温度有关；升温促进水的电离，Kw 增大。</li><li>酸碱性看<b>相对大小</b>：c(H⁺)&gt;c(OH⁻) 为酸性；中性时二者相等（不一定等于 10⁻⁷）。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">pH = −lg c(H⁺)　｜　pKw = pH + pOH</div>25℃：pKw=14，中性 pH=7。升温 pKw 减小（100℃ 约 12.1），中性 pH≈6.1——此时 pH=7 反而是碱性！</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>洗发水弱碱性去油，护发素弱酸性护发，一洗一护。</li><li>鱼塘水质监测：pH 突变提示水体污染。</li><li>胃液 pH 1~2，饭后短暂升高又恢复。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「pH=7 一定是中性」→ 要看温度，升温中性点小于 7。</li><li>❌「酸稀释 100 倍 pH 变 14」→ pH 只能无限接近 7，水也在电离。</li><li>❌「pH 相差 1 只是差 1」→ c(H⁺) 相差 10 倍。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会进行 pH 与 c(H⁺)、c(OH⁻) 的互算，理解 Kw 随温度变化。<br><b>开场提问：</b>"100℃ 的热水里，pH=7 还算中性吗？"<br><b>活动：</b>先拖 pH 看色带与酸碱性，再固定 pH 拖温度观察中性点漂移。<br><b>总结金句：</b>"pH 是负对数，十倍一档别记错。"</div></div>
+      </div>
+
+      <!-- ⑧ 盐类的水解 -->
+      <div class="topic" id="hydrolysis">
+        <div class="toph">⑧ 盐类的水解：谁强显谁性</div>
+        <div class="tops">选一种盐、调一个浓度：强酸强碱盐"按兵不动"，含弱离子的盐则"拉着"水反应，溶液酸碱性随之改变。</div>
+        <div class="stage"><svg id="svHy" viewBox="0 0 560 260"></svg></div>
+        <div class="readout">
+          <div class="r">溶液 pH = <b id="hyPH">7.00</b></div>
+          <div class="r">酸碱性：<b id="hyState">中性</b></div>
+          <div class="r">水解方程式：<b id="hyEq">不水解</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>盐溶液</label><div class="mode"><button class="on" id="hyNaCl">NaCl</button><button id="hyNH4Cl">NH₄Cl</button><button id="hyAcNa">CH₃COONa</button><button id="hyNa2CO3">Na₂CO₃</button></div></div>
+          <div class="crow"><label>浓度 c（mol/L）</label><input type="range" id="sHC" min="0.01" max="1" step="0.01" value="0.1"><span class="val" id="vHC">0.10</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>水解本质</b>：盐电离出的弱酸根/弱碱阳离子与水电离出的 H⁺ 或 OH⁻ 结合，破坏水的电离平衡。</li><li>规律：<b>有弱才水解，谁强显谁性，越弱越水解</b>；强酸强碱盐不水解。</li><li>水解是<b>吸热</b>反应，升温促进水解。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">NH₄⁺+H₂O ⇌ NH₃·H₂O+H⁺，Kh = Kw/Kb　｜　c(H⁺) ≈ √(Kh·c)</div>0.1 mol/L NH₄Cl：Kh=10⁻¹⁴/1.8×10⁻⁵≈5.6×10⁻¹⁰，c(H⁺)≈√(5.6×10⁻¹¹)≈7.5×10⁻⁶ → pH≈5.1（弱酸性）。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>纯碱（Na₂CO₃）去油污：水解显碱性，加热促进水解效果更好。</li><li>泡沫灭火器：Al₂(SO₄)₃ 与 NaHCO₃ 双水解互相促进产生 CO₂。</li><li>化肥：铵态氮肥不宜与草木灰（碱性）混用。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「水解方程式用 = 且彻底」→ 水解微弱，用 ⇌ 且不标 ↑↓。</li><li>❌「所有盐都水解」→ 强酸强碱盐（NaCl）不水解。</li><li>❌「中和反应都放热所以水解放热」→ 水解是中和的逆过程，吸热。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会判断盐溶液酸碱性并书写水解方程式。<br><b>开场提问：</b>"纯碱不是碱，为什么叫'碱'面？"<br><b>活动：</b>四种盐切换对比 pH，再升温/稀释观察方向。<br><b>总结金句：</b>"谁强显谁性，越弱越水解。"</div></div>
+      </div>
+
+      <!-- ⑨ 沉淀溶解平衡 -->
+      <div class="topic" id="ksp">
+        <div class="toph">⑨ 沉淀溶解平衡：Ksp 与 Q 的比较</div>
+        <div class="tops">AgCl(s) ⇌ Ag⁺ + Cl⁻。调两种离子浓度，Q 与 Ksp 一比：过饱和析出、不饱和溶解。</div>
+        <div class="stage"><svg id="svKs" viewBox="0 0 560 260"></svg></div>
+        <div class="readout">
+          <div class="r">Q = c(Ag⁺)·c(Cl⁻) = <b id="ksQ">1.0×10⁻⁴</b></div>
+          <div class="r">Ksp(AgCl) = 1.8×10⁻¹⁰</div>
+          <div class="r">状态：<b id="ksState">Q>Ksp：析出沉淀</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>lg c(Ag⁺)（mol/L）</label><input type="range" id="sKA" min="-5.5" max="-1" step="0.1" value="-2"><span class="val" id="vKA">-2.0</span></div>
+          <div class="crow"><label>lg c(Cl⁻)（mol/L）</label><input type="range" id="sKC" min="-5.5" max="-1" step="0.1" value="-2"><span class="val" id="vKC">-2</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>沉淀溶解平衡</b>：固体溶质与溶液中离子间的动态平衡，如 AgCl(s) ⇌ Ag⁺ + Cl⁻。</li><li><b>Ksp</b>（溶度积）只与温度有关；同类型沉淀可直接比较 Ksp 判断溶解能力。</li><li>离子积 Q 与 Ksp 比较：Q&gt;Ksp 生成沉淀；Q=Ksp 平衡；Q&lt;Ksp 不饱和。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">AgCl(s) ⇌ Ag⁺ + Cl⁻　｜　Ksp = c(Ag⁺)·c(Cl⁻) = 1.8×10⁻¹⁰</div>沉淀转化规律：Ksp 小的沉淀更难溶，可由易溶向难溶转化（BaCO₃ + SO₄²⁻ → BaSO₄ + CO₃²⁻）。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>钡餐用 BaSO₄（Ksp 极小不溶解）而不用有毒的 BaCO₃（胃酸可溶）。</li><li>龋齿：酸性环境溶解牙釉质（羟基磷灰石）的溶解平衡。</li><li>硬水水垢：CaCO₃、Mg(OH)₂ 沉淀析出。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「Ksp 越小溶解度一定越小」→ 只有同类型沉淀才可直接比较。</li><li>❌「加越多水沉淀溶得越多」→ 溶解有限，注意溶度积的表达式。</li><li>❌「沉淀完全=离子浓度为零」→ 只是离子浓度降到极低（&lt;10⁻⁵ mol/L）。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>会用 Q 与 Ksp 判断沉淀的生成与溶解。<br><b>开场提问：</b>"把盐水不断蒸发，盐为什么'冒'出来？——浓度积超过限度了。"<br><b>活动：</b>分别调两种离子浓度，找 Q=Ksp 的临界点。<br><b>总结金句：</b>"Q 大析出，Q 小溶解，相等恰好平衡。"</div></div>
+      </div>
+
+      <!-- ⑩ 原电池 -->
+      <div class="topic" id="galvanic">
+        <div class="toph">⑩ 原电池：化学能 → 电能</div>
+        <div class="tops">锌铜稀硫酸电池：锌失电子被氧化（负极），氢离子在铜片上得电子冒泡（正极）。看电子"跑"外电路、离子走溶液。</div>
+        <div class="stage"><canvas id="cvGa" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">负极：Zn − 2e⁻ = Zn²⁺</div>
+          <div class="r">正极：2H⁺ + 2e⁻ = H₂↑</div>
+          <div class="r">电子流向：<b id="gaDir">Zn → 导线 → Cu</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>硫酸浓度（mol/L）</label><input type="range" id="sGA" min="0.1" max="2" step="0.1" value="0.5"><span class="val" id="vGA">0.5</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>原电池</b>把化学能转化为电能：自发的氧化还原反应拆成两半，电子经外电路转移做功。</li><li><b>负极</b>：活泼金属失电子，被氧化；<b>正极</b>：氧化剂得电子，被还原。</li><li>闭合回路：电子走导线，离子走电解质溶液。</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">负极：Zn − 2e⁻ = Zn²⁺（氧化）　｜　正极：2H⁺ + 2e⁻ = H₂↑（还原）</div>总反应 Zn + 2H⁺ = Zn²⁺ + H₂↑。判断口诀：两极一液一回路；活泼金属为负极。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>干电池、手机锂电池都是"自带电解质的原电池组"。</li><li>轮船船体焊上锌块"牺牲阳极"防腐蚀。</li><li>水果电池：插两种金属片就能点亮 LED——原理同款。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「电子穿过溶液」→ 电子只走导线，溶液中靠离子定向移动。</li><li>❌「铜被腐蚀」→ 铜是正极只导电，锌才被腐蚀。</li><li>❌「正负极看位置」→ 看活泼性与反应，不是看画在左边还是右边。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>能指认正负极、写电极反应式、说清电子与离子的流向。<br><b>开场提问：</b>"为什么铜板上冒泡，锌板上却不冒？"<br><b>活动：</b>拖酸浓度看气泡速度，追问本质（c(H⁺) 增大）。<br><b>总结金句：</b>"负失氧、正得还，电子外路转一圈。"</div></div>
+      </div>
+
+      <!-- ⑪ 电解池 -->
+      <div class="topic" id="electrolysis">
+        <div class="toph">⑪ 电解池：电能 → 化学能</div>
+        <div class="tops">电解 CuCl₂ 溶液：阳极氯离子放电出氯气，阴极铜离子放电镀铜。电压要够"劲"才推得动非自发反应。</div>
+        <div class="stage"><canvas id="cvEl" width="560" height="260"></canvas></div>
+        <div class="readout">
+          <div class="r">阳极：2Cl⁻ − 2e⁻ = Cl₂↑</div>
+          <div class="r">阴极：Cu²⁺ + 2e⁻ = Cu</div>
+          <div class="r">状态：<b id="elState">电解中</b></div>
+        </div>
+        <div class="ctrl">
+          <div class="crow"><label>外加电压（V）</label><input type="range" id="sEV2" min="0" max="10" step="0.5" value="5"><span class="val" id="vEV2">5.0</span></div>
+        </div>
+        <div class="tabs"><button class="on" data-tab="concept">概念</button><button data-tab="formula">公式</button><button data-tab="life">生活连结</button><button data-tab="myth">常见迷思</button><button data-tab="prep">老师备课卡</button></div>
+        <div class="tabp" data-p="concept"><h4>核心概念</h4><ul><li><b>电解池</b>把电能转化为化学能，可驱动不能自发进行的氧化还原反应。</li><li><b>阳极</b>接电源正极，发生氧化反应；<b>阴极</b>接电源负极，发生还原反应。</li><li>离子放电顺序（阳极）：S²⁻&gt;I⁻&gt;Br⁻&gt;Cl⁻&gt;OH⁻；（阴极）Ag⁺&gt;Cu²⁺&gt;H⁺&gt;…</li></ul></div>
+        <div class="tabp" data-p="formula" style="display:none"><h4>公式与推导</h4><div class="fm">阳极：2Cl⁻ − 2e⁻ = Cl₂↑　｜　阴极：Cu²⁺ + 2e⁻ = Cu</div>与原电池对偶记忆："阳氧阴还"（电解池阳极氧化）恰好与原电池相反，先定电极名再写反应。</div>
+        <div class="tabp" data-p="life" style="display:none"><h4>生活连结</h4><ul><li>电解精炼铜：粗铜做阳极，纯铜在阴极"长"出来。</li><li>电镀：镀件做阴极，镀层金属做阳极。</li><li>氯碱工业：电解饱和食盐水制 Cl₂、H₂ 和 NaOH。</li></ul></div>
+        <div class="tabp" data-p="myth" style="display:none"><h4>常见迷思</h4><ul><li>❌「阴阳极与正负极混着叫」→ 电解池说阴阳极，原电池说正负极。</li><li>❌「阳极总是惰性电极」→ 活性金属做阳极时金属本身优先溶解。</li></ul></div>
+        <div class="tabp" data-p="prep" style="display:none"><div class="prep"><div class="ph">📝 老师备课卡</div><b>教学目标：</b>区分原电池与电解池，正确书写电解 CuCl₂ 的电极反应。<br><b>开场提问：</b>"湿馒头能导电吗？通电后两极会看到什么？"<br><b>活动：</b>把电压从 0 慢慢升高，找"开始电解"的瞬间；对比溶液颜色变化。<br><b>总结金句：</b>"阳氧阴还，外电推着电子走。"</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    高二化学 · 选择性必修1《化学反应原理》互动备课盒 ｜ 对应教材：人民教育出版社 2019 版<br>
+    单文件 HTML · 零依赖 · 离线可用 · 数值真实计算 · 课堂投屏 / 平板 / 手机均可
+  </div>
+</div>
+
+<script>
+/* ============ 单元与页签切换 ============ */
+var current='thermo';
+document.querySelectorAll('.nav button').forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll('.nav button').forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+    var t=b.getAttribute('data-t'); current=t;
+    document.querySelectorAll('.topic').forEach(function(tp){tp.classList.toggle('on',tp.id===t);});
+  };
+});
+document.querySelectorAll('.topic').forEach(function(tp){
+  tp.querySelectorAll('.tabs button').forEach(function(b){
+    b.onclick=function(){
+      tp.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      var p=b.getAttribute('data-tab');
+      tp.querySelectorAll('.tabp').forEach(function(pp){pp.style.display=(pp.getAttribute('data-p')===p)?'block':'none';});
+    };
+  });
+});
+function V(id){return +document.getElementById(id).value;}
+function W(id,v){document.getElementById(id).textContent=v;}
+function sup(n){var m={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};var s=String(n),o='';for(var i=0;i<s.length;i++)o+=m[s[i]]||'';return o;}
+function sci(v,d){ /* 科学计数 "1.0×10⁻⁷" */
+  if(v===0)return '0';
+  var e=Math.floor(Math.log(Math.abs(v))/Math.LN10);
+  var m=v/Math.pow(10,e);
+  return m.toFixed(1)+'×10'+sup(e);
+}
+function phColor(p){
+  var stops=[[0,'#8E1B10'],[1,'#C0392B'],[3,'#E67E22'],[5,'#F1C40F'],[7,'#27AE60'],[9,'#2980B9'],[11,'#8E44AD'],[14,'#5B2C6F']];
+  for(var i=1;i<stops.length;i++){
+    if(p<=stops[i][0]){var a=stops[i-1],b=stops[i];var f=(p-a[0])/(b[0]-a[0]);
+      var h1=a[1],h2=b[1];
+      var r1=parseInt(h1.substr(1,2),16),g1=parseInt(h1.substr(3,2),16),b1=parseInt(h1.substr(5,2),16);
+      var r2=parseInt(h2.substr(1,2),16),g2=parseInt(h2.substr(3,2),16),b2=parseInt(h2.substr(5,2),16);
+      var r=Math.round(r1+(r2-r1)*f),g=Math.round(g1+(g2-g1)*f),bl=Math.round(b1+(b2-b1)*f);
+      return 'rgb('+r+','+g+','+bl+')';}
+  }
+  return '#5B2C6F';
+}
+
+/* ============ ① 反应热与焓变 ============ */
+var thermoR=0;
+var TH_R=[
+  {name:'H₂(g) + Cl₂(g) = 2HCl(g)',brk:436+243,rel:2*431,det:'断键：H−H 436 + Cl−Cl 243 = 679　成键：2×H−Cl 431 = 862'},
+  {name:'N₂(g) + 3H₂(g) = 2NH₃(g)',brk:946+3*436,rel:6*391,det:'断键：N≡N 946 + 3×H−H 436 = 2254　成键：6×N−H 391 = 2346'},
+  {name:'2H₂(g) + O₂(g) = 2H₂O(g)',brk:2*436+498,rel:4*463,det:'断键：2×H−H 436 + O=O 498 = 1370　成键：4×O−H 463 = 1852'}
+];
+function drawThermo(){
+  var R=TH_R[thermoR];
+  var dh=R.brk-R.rel; /* ΔH = 断键吸收 − 成键释放 */
+  W('thAbs',R.brk);W('thRel',R.rel);
+  W('thDH',(dh>=0?'+':'−')+Math.abs(dh));
+  W('thState',dh<0?'放热反应':'吸热反应');
+  var cv=document.getElementById('cvTh'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  var scale=150/Math.max(R.brk,R.rel);
+  var h1=R.brk*scale,h2=R.rel*scale;
+  c.fillStyle='rgba(255,107,107,.85)';c.fillRect(120,220-h1,120,h1);
+  c.fillStyle='#FF6B6B';c.font='bold 13px sans-serif';c.textAlign='center';
+  c.fillText('断键吸收',120+50,236);
+  c.fillStyle='rgba(91,217,122,.85)';c.fillRect(320,220-h2,120,h2);
+  c.fillStyle='#5BD97A';c.fillText('成键释放',320+50,236);
+  c.fillStyle='#9FB2CC';c.font='12px sans-serif';
+  c.fillText('+'+R.brk+' kJ',120+50,220-h1-8);
+  c.fillText('+'+R.rel+' kJ',320+50,220-h2-8);
+  /* ΔH 箭头（两柱顶端差） */
+  var y1=220-h1,y2=220-h2;
+  c.strokeStyle=dh<=0?'#5BD97A':'#FF6B6B';c.lineWidth=2.5;
+  c.beginPath();c.moveTo(210,y1);c.lineTo(320,y2);c.stroke();
+  c.fillStyle=dh<=0?'#5BD97A':'#FF6B6B';c.font='bold 14px sans-serif';
+  c.fillText('ΔH='+(dh>=0?'+':'−')+Math.abs(dh)+' kJ/mol',265,(y1+y2)/2-10);
+  c.fillStyle='#EAF1FB';c.font='bold 13px sans-serif';
+  c.fillText(R.name,280,30);
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='left';
+  c.fillText(R.det,30,252);c.textAlign='center';
+}
+
+/* ============ ② 盖斯定律 ============ */
+function drawHess(){
+  var h1=V('sH1'),h2=V('sH2');
+  W('heH1',(h1>=0?'+':'−')+Math.abs(h1));W('vH1',h1);
+  W('heH2',(h2>=0?'+':'−')+Math.abs(h2));W('vH2',h2);
+  var tot=h1+h2;
+  W('heSum',(tot>=0?'+':'−')+Math.abs(tot));
+  var svg=document.getElementById('svHe'),h='';
+  var yA=110,yB=yA+h1*0.6,yC=yB+h2*0.6;
+  function lvl(x,y,tag){h+='<line x1="'+(x-40)+'" y1="'+y+'" x2="'+(x+40)+'" y2="'+y+'" stroke="#FFC94D" stroke-width="4"/>';
+    h+='<text x="'+x+'" y="'+(y-10)+'" fill="#9FB2CC" font-size="12" text-anchor="middle">'+tag+'</text>';}
+  lvl(80,yA,'A（始态）');lvl(280,yB,'B');lvl(480,yC,'C（终态）');
+  h+='<line x1="80" y1="'+yA+'" x2="280" y2="'+yB+'" stroke="#37D6C9" stroke-width="2"/><text x="150" y="'+((yA+yB)/2-8)+'" fill="#37D6C9" font-size="13">ΔH₁='+h1+'</text>';
+  h+='<line x1="280" y1="'+yB+'" x2="480" y2="'+yC+'" stroke="#37D6C9" stroke-width="2"/><text x="370" y="'+((yB+yC)/2-8)+'" fill="#37D6C9" font-size="13">ΔH₂='+h2+'</text>';
+  h+='<line x1="80" y1="'+yA+'" x2="480" y2="'+yC+'" stroke="#FFC94D" stroke-width="2" stroke-dasharray="7 5"/>';
+  h+='<text x="270" y="'+((yA+yC)/2+18)+'" fill="#FFC94D" font-size="14" font-weight="700">ΔH总 = ΔH₁+ΔH₂ = '+(tot>=0?'+':'−')+Math.abs(tot)+' kJ/mol</text>';
+  svg.innerHTML=h;
+}
+
+/* ============ ③ 化学反应速率 ============ */
+var rateCat=false,ratePhase=0;
+function rateK(){return 0.02*Math.pow(2,(V('sRT')-298)/10)*(rateCat?4:1);}
+function drawRate(){
+  var T=V('sRT'),k=rateK();
+  W('raK',k.toFixed(3));W('raV',(k*1).toFixed(3));W('raHalf',(0.693/k).toFixed(1));
+  W('vRT',T);
+  var cv=document.getElementById('cvRa'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  /* 坐标 */
+  c.strokeStyle='#2c4a72';c.lineWidth=1.5;
+  c.beginPath();c.moveTo(60,20);c.lineTo(60,200);c.lineTo(540,200);c.stroke();
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='right';
+  c.fillText('c/(mol·L⁻¹)',58,16);c.fillText('t/s',540,214);
+  /* 曲线：当前 T 与 298K 对照 */
+  function curve(kk,col,dash){
+    c.strokeStyle=col;c.lineWidth=2;if(dash)c.setLineDash([5,4]);
+    c.beginPath();
+    for(var t=0;t<=10;t+=0.1){
+      var x=60+t/10*480,y=200-(c0*Math.exp(-kk*t))*160;
+      if(t===0)c.moveTo(60,y);else c.lineTo(x,y);
+    }
+    c.stroke();c.lineWidth=1.5;c.setLineDash([]);
+  }
+  var c0=1.0,k=rateK();
+  curve(0.02,'#9FB2CC',true);
+  curve(k,'#37D6C9',false);
+  c.fillStyle='#37D6C9';c.textAlign='left';c.fillText('T='+T+'K'+(rateCat?'（催化）':''),70,30);
+  c.fillStyle='#9FB2CC';c.fillText('298K 对照',70,44);
+  /* 粒子碰撞闪光：频率∝k */
+  var n=Math.min(30,Math.ceil(k*400));
+  for(var i=0;i<n;i++){
+    var fx=(i*97+Math.floor(ratePhase*20*(i%3+1)))%470+70;
+    var fy=(i*53)%150+40;
+    c.fillStyle='rgba(255,201,77,'+(0.15+0.85*Math.abs(Math.sin(ratePhase*3+i)))+')';
+    c.beginPath();c.arc(fx,fy,3,0,7);c.fill();
+  }
+  ratePhase+=0.02;
+}
+
+/* ============ ④ 化学平衡 ============ */
+function drawEquil(){
+  var T=V('sET'),p=V('sEP'),cN=V('sEN');
+  var K=100*Math.pow(2,-(T-300)/10); /* 放热：升温 K 减小 */
+  var Q=cN*cN/(1*1);
+  var dir=Q<K*0.999?'正向进行':(Q>K*1.001?'逆向进行':'接近平衡');
+  W('eqK',K.toFixed(1));W('eqQ',Q.toFixed(2));W('eqDir',dir);
+  var cv=document.getElementById('cvEq'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  /* 容器（压强增大体积缩小） */
+  var w=420/Math.sqrt(p),h=180/Math.sqrt(p);
+  var x0=280-w/2,y0=130-h/2;
+  c.strokeStyle='#2c4a72';c.lineWidth=3;c.strokeRect(x0,y0,w,h);
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='center';
+  c.fillText(p+' atm · 容器 '+Math.round(100/p)+'%',280,y0+h+16);
+  /* 粒子：N2 蓝 / H2 绿 / NH3 金（数量按计量与注入量） */
+  function dots(cx,cy,n,col){
+    for(var i=0;i<n;i++){
+      var a=i*2.39996;
+      var rr=8*Math.sqrt(i);
+      c.fillStyle=col;c.beginPath();
+      c.arc(cx+rr*Math.cos(a),cy+rr*Math.sin(a),4.5,0,7);c.fill();
+    }
+  }
+  dots(x0+w*0.22,y0+h*0.5,Math.round(4*1), '#5BA8FF');
+  dots(x0+w*0.5,y0+h*0.35,Math.round(9),'#5BD97A');
+  dots(x0+w*0.5,y0+h*0.65,Math.round(cN*20),'#FFC94D');
+  c.fillStyle='#5BA8FF';c.fillText('N₂',x0+w*0.15,y0+h*0.55);
+  c.fillStyle='#5BD97A';c.fillText('H₂',x0+w*0.55,y0+h*0.4);
+  c.fillStyle='#FFC94D';c.fillText('NH₃',x0+w*0.55,y0+h*0.72);
+  /* 正逆速率条 */
+  var fwd=Math.min(1,K/(K+Q)),bwd=Math.min(1,Q/(K+Q));
+  c.fillStyle='#37D6C9';c.fillRect(60,232,180*Math.min(1,K/(K+1)),8);
+  c.fillStyle='#FF7AA8';c.fillRect(300,180,180*Math.min(1,Q/(K*0.01+1)),8);
+  c.fillStyle='#9FB2CC';c.fillText('v正',50,208);c.fillText('v逆',270,188);
+}
+
+/* ============ ⑤ 化学反应的方向 ============ */
+function drawDirect(){
+  var dH=V('sDH'),dS=V('sDS'),T=V('sDT');
+  function Gof(t){return dH-t*dS/1000;} /* ΔS: J/(mol·K) → kJ 换算 */
+  var G=Gof(T);
+  W('diG',(G>=0?'+':'−')+Math.abs(G).toFixed(0));
+  W('diState',G<0?'能自发进行':'不能自发');
+  var cv=document.getElementById('cvDi'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  c.strokeStyle='#2c4a72';c.lineWidth=1.5;
+  c.beginPath();c.moveTo(60,130);c.lineTo(520,130);c.stroke(); /* 零线 */
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='left';
+  c.fillText('ΔG/(kJ·mol⁻¹)',62,18);c.fillText('T/K',524,134);
+  c.textAlign='center';c.fillText('0',52,134);
+  /* 自发区着色：ΔG<0 的 T 区间 */
+  var x1=60,x2=520;
+  function Gy(t){return 130-Gof(t)*0.3;}
+  if(dS!==0){
+    var tStar=dH/(dS/1000);
+    if(tStar>0&&tStar<=1000){
+      var sx=60+tStar/1000*460;
+      c.fillStyle='rgba(91,217,122,.12)';
+      if(dS>0){c.fillRect(sx,10,x2-sx,240);}
+      else{c.fillRect(x1,10,sx-x1,240);}
+    }
+  } else if(dH<0){c.fillStyle='rgba(91,217,122,.12)';c.fillRect(x1,10,x2-x1,240);}
+  /* ΔG–T 直线 */
+  c.strokeStyle='#37D6C9';c.lineWidth=2.5;
+  c.beginPath();c.moveTo(x1,Gy(0));c.lineTo(x2,Gy(1000));c.stroke();
+  var curY=Gy(T);
+  c.fillStyle='#FFC94D';c.beginPath();c.arc(60+T/1000*460,curY,5,0,7);c.fill();
+  c.fillStyle='#FFC94D';c.textAlign='center';
+  c.fillText('T='+T+'K，ΔG='+G.toFixed(0)+' kJ/mol',60+T/1000*460,Math.max(14,Math.min(246,curY-12)));
+  c.fillStyle='#5BD97A';c.textAlign='left';c.fillText('绿色侧（零线下方）= 自发',64,140);
+}
+
+/* ============ ⑥ 电离平衡 ============ */
+function drawIonize(){
+  var c0=V('sIC'),T=V('sIT');
+  var Ka=1.75e-5*Math.pow(10,0.01*(T-25));
+  var x=(-Ka+Math.sqrt(Ka*Ka+4*Ka*c0))/2;
+  var alpha=x/c0*100,ph=-Math.log10(x);
+  document.getElementById('ioKa').textContent=scix(Ka);
+  document.getElementById('ioCH').textContent=scix(x);
+  W('ioAlpha',alpha.toFixed(2));W('ioPH',ph.toFixed(2));
+  var svg=document.getElementById('svIo'),h='';
+  h+='<rect x="120" y="50" width="320" height="160" rx="8" fill="rgba(91,168,255,.06)" stroke="#2c4a72" stroke-width="3"/>';
+  function nI_raw(){return Math.min(10,Math.round(alpha/0.4));}
+  var nM=Math.max(2,20-nI_raw());
+  var nI=nI_raw();
+  for(var i=0;i<nM;i++){
+    var px=140+(i%7)*38,py=80+Math.floor(i/7)*40;
+    h+='<circle cx="'+px+'" cy="'+py+'" r="8" fill="#FFC94D"/>';
+    h+='<text x="'+px+'" y="'+(py+4)+'" fill="#0E1A2B" font-size="9" text-anchor="middle" font-weight="700">HA</text>';
+  }
+  for(var j=0;j<nI;j++){
+    var ix=160+j*44,iy=170;
+    h+='<circle cx="'+ix+'" cy="'+iy+'" r="7" fill="#5BA8FF"/>';
+    h+='<text x="'+ix+'" y="'+(iy+4)+'" fill="#fff" font-size="10" text-anchor="middle">H⁺</text>';
+    h+='<circle cx="'+(ix+16)+'" cy="'+iy+'" r="7" fill="#37D6C9"/>';
+    h+='<text x="'+(ix+16)+'" y="'+(iy+4)+'" fill="#0E1A2B" font-size="9" text-anchor="middle">Ac⁻</text>';
+  }
+  h+='<text x="280" y="245" fill="#9FB2CC" font-size="11" text-anchor="middle">金色=未电离分子（示意）｜蓝绿对=已电离离子　浓度越小、温度越高 → 电离越多</text>';
+  svg.innerHTML=h;
+  function scix(v){var e=Math.floor(Math.log10(v));return (v/Math.pow(10,e)).toFixed(2)+'×10'+sup(e);}
+}
+
+/* ============ ⑦ 水的电离与 pH ============ */
+function drawPH(){
+  var pH=V('sPH2'),T=V('sPT');
+  var pKw=14-0.033*(T-25);
+  var Kw=Math.pow(10,-pKw);
+  var cH=Math.pow(10,-pH),cOH=Kw/cH;
+  W('phH',scix(cH));W('phOH',scix(cOH_val()));
+  W('phKw','1.0×10'+sup(-Math.round(pKw)));
+  W('phState',pH<pKw/2?'酸性':(pH>pKw/2?'碱性':'中性'));
+  var cv=document.getElementById('cvPH'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  for(var i=0;i<28;i++){
+    c.fillStyle=phColor(i/2);
+    c.fillRect(40+i*17.1,60,16,26);
+  }
+  c.fillStyle='#9FB2CC';c.font='10px sans-serif';c.textAlign='center';
+  c.fillText('0',40,70);c.fillText('7',280,70);c.fillText('14',520,70);
+  var px=40+pH/14*480;
+  c.fillStyle='#fff';c.beginPath();c.moveTo(px,84);c.lineTo(px-5,92);c.lineTo(px+5,92);c.closePath();c.fill();
+  var midX=40+pKw/2/14*480;
+  c.strokeStyle='#37D6C9';c.setLineDash([4,4]);
+  c.beginPath();c.moveTo(midX,84);c.lineTo(midX,120);c.stroke();c.setLineDash([]);
+  c.fillStyle='#37D6C9';c.fillText('中性点 '+ (pKw/2).toFixed(1),midX,132);
+  /* 烧杯液体 */
+  c.fillStyle=phColor(pH);
+  c.fillRect(200,150,160,70);
+  c.strokeStyle='#2c4a72';c.strokeRect(200,150,160,70);
+  c.fillStyle='#fff';c.font='bold 15px sans-serif';c.textAlign='center';
+  c.fillText('pH = '+pH.toFixed(1),280,192);
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';
+  c.fillText('中性点位置随温度移动（升温 < 7）—— 酸碱性由 c(H⁺) 与 c(OH⁻) 相对大小决定',280,240);
+  function cOH_val(){return Kw/cH;}
+  function scix(v){var e=Math.floor(Math.log10(v));return (v/Math.pow(10,e)).toFixed(1)+'×10'+sup(e);}
+}
+
+/* ============ ⑧ 盐类的水解 ============ */
+var hyIdx=0; /* 0 NaCl 1 NH4Cl 2 CH3COONa 3 Na2CO3 */
+function drawHydrolysis(){
+  var c0=V('sHC');
+  var pH,eqTxt;
+  if(hyIdx===0){pH=7.00;eqTxt='不水解（强酸强碱盐）';}
+  else if(hyIdx===1){var Kh=1e-14/1.8e-5,x=Math.sqrt(Kh*c0);pH=-Math.log10(x);eqTxt='NH₄⁺ + H₂O ⇌ NH₃·H₂O + H⁺';}
+  else if(hyIdx===2){var Kh2=1e-14/1.75e-5,co=Math.sqrt(Kh2*c0);pH=14+Math.log10(co);eqTxt='CH₃COO⁻ + H₂O ⇌ CH₃COOH + OH⁻';}
+  else{var Kh3=1e-14/4.7e-11,co2=Math.sqrt(Kh3*c0);pH=14+Math.log10(co2);eqTxt='CO₃²⁻ + H₂O ⇌ HCO₃⁻ + OH⁻';}
+  W('hyPH',pH.toFixed(2));
+  W('hyState',pH<6.5?'酸性':(pH>7.5?'碱性':'中性'));
+  W('hyEq',eqTxt);
+  var svg=document.getElementById('svHy'),h='';
+  h+='<rect x="150" y="60" width="260" height="140" rx="8" fill="none" stroke="#2c4a72" stroke-width="3"/>';
+  h+='<rect x="153" y="'+(92)+'" width="254" height="105" rx="6" fill="'+phColor(pH)+'"/>';
+  h+='<text x="280" y="170" fill="#0E1A2B" font-size="30" font-weight="700" text-anchor="middle">pH '+pH.toFixed(2)+'</text>';
+  h+='<text x="280" y="225" fill="#9FB2CC" font-size="12" text-anchor="middle">'+['NaCl','NH₄Cl','CH₃COONa','Na₂CO₃'][hyIdx]+' 溶液 · c='+c0.toFixed(2)+' mol/L</text>';
+  svg.innerHTML=h;
+}
+
+/* ============ ⑨ 沉淀溶解平衡 ============ */
+function drawKsp(){
+  var lgA=V('sKA'),lgC=V('sKC');
+  var Q=Math.pow(10,lgA+lgC);
+  var Ksp=1.8e-10;
+  W('ksQ',scix(Q));
+  W('ksState',Q>Ksp?'Q>Ksp：析出沉淀':(Q<Ksp*0.99?'Q<Ksp：不饱和，无沉淀':'恰好饱和'));
+  var svg=document.getElementById('svKs'),h='';
+  h+='<rect x="160" y="70" width="240" height="120" rx="8" fill="rgba(91,168,255,.05)" stroke="#2c4a72" stroke-width="3"/>';
+  var t=Math.round(Math.min(45,Math.max(0,8*(Math.log10(Q)-Math.log10(1.8e-10)))));
+  if(t>0)h+='<rect x="164" y="'+(188-t)+'" width="232" height="'+t+'" fill="#EAF1FB"/>';
+  h+='<text x="280" y="215" fill="#FFC94D" font-size="12" text-anchor="middle">'+(t>0?'底部沉淀厚度示意':'清亮溶液（Q<Ksp）')+'</text>';
+  h+='<text x="480" y="130" fill="#9FB2CC" font-size="11">Ksp=1.8×10⁻¹⁰</text>';
+  svg.innerHTML=h;
+  function scix(v){var e=Math.floor(Math.log10(v));return (v/Math.pow(10,e)).toFixed(1)+'×10'+sup(e);}
+}
+
+/* ============ ⑩ 原电池 ============ */
+var gaPhase=0;
+function drawGalvanic(){
+  var acid=V('sGA');
+  W('gaDir','Zn → 导线 → Cu');
+  var cv=document.getElementById('cvGa'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  /* 烧杯 */
+  c.strokeStyle='#2c4a72';c.lineWidth=3;
+  c.strokeRect(120,100,320,120);
+  c.fillStyle='rgba(91,168,255,.08)';c.fillRect(120,100,320,120);
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='center';
+  c.fillText('稀 H₂SO₄ · c='+acid.toFixed(1)+' mol/L',280,232);
+  /* 电极 */
+  c.fillStyle='#B8C4D4';c.fillRect(180,80,18,110);
+  c.fillStyle='#FF9D3D';c.fillRect(360,80,18,120);
+  c.fillStyle='#0E1A2B';c.font='bold 12px sans-serif';
+  c.fillText('Zn',189,150);c.fillText('Cu',369,150);
+  /* 导线 */
+  c.strokeStyle='#9FB2CC';c.lineWidth=2;
+  c.beginPath();c.moveTo(189,80);c.lineTo(189,40);c.lineTo(369,40);c.lineTo(369,80);c.stroke();
+  /* 电子点 */
+  var nE=8;
+  for(var i=0;i<nE;i++){
+    var t=((gaPhase*(0.5+acid)+i/nE)%1);
+    var ex=189+t*(369-189);
+    c.fillStyle='#FFC94D';c.beginPath();c.arc(ex,40,4,0,7);c.fill();
+  }
+  gaPhase+=0.01+acid*0.01;
+  /* 铜极气泡 */
+  var nb=Math.round(3+acid*3);
+  for(var b=0;b<nb;b++){
+    var by=195-((gaPhase*40*(0.5+acid*0.5)+b*17)%70);
+    c.strokeStyle='#37D6C9';c.lineWidth=1.2;
+    c.beginPath();c.arc(369+(b%2?8:-4),by,3.5,0,7);c.stroke();
+  }
+  c.fillStyle='#EAF1FB';c.font='bold 13px sans-serif';
+  c.fillText('Zn（负极）',189,26);c.fillText('Cu（正极）',369,26);
+  c.fillStyle='#5BA8FF';c.font='11px sans-serif';
+  c.fillText('H⁺ →',280,190);
+}
+
+/* ============ ⑪ 电解池 ============ */
+var elPhase=0;
+function drawElectrolysis(){
+  var volt=V('sEV2');
+  var on=volt>=1.2;
+  W('elState',on?'电解中（U='+volt.toFixed(1)+'V）':'电压不足（<1.2V），未电解');
+  var cv=document.getElementById('cvEl'),c=cv.getContext('2d');
+  c.clearRect(0,0,560,260);
+  c.strokeStyle='#2c4a72';c.lineWidth=3;
+  c.strokeRect(120,100,320,120);
+  c.fillStyle='rgba(91,168,255,.05)';c.fillRect(120,100,320,120);
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='center';
+  c.fillText('CuCl₂ 溶液',280,232);
+  /* 电极：左阳极（碳棒）右阴极 */
+  c.fillStyle='#B98BFF';c.fillRect(180,70,14,110);
+  c.fillStyle='#FF6B6B';c.fillRect(380,70,18,120);
+  c.fillStyle='#EAF1FB';c.font='bold 12px sans-serif';
+  c.fillText('阳极(+)',189,62);c.fillText('阴极(−)',425,62);
+  /* 离子迁移与气泡 */
+  if(on){
+    var sp=0.3+volt*0.08;
+    for(var i=0;i<6;i++){
+      c.fillStyle='#37D6C9';c.beginPath();c.arc(180+40+((elPhase*(sp*2)+i*53)%160),110+(i%4)*30,4,0,7);c.fill();
+      c.fillStyle='#5BD97A';c.beginPath();c.arc(400-40-((elPhase*(sp*2)+i*37)%160),150-(i%3)*22,4,0,7);c.fill();
+    }
+    var bub=Math.floor(elPhase*(2+volt)*6)%4;
+    for(var b2=0;b2<bub;b2++){
+      c.strokeStyle='#FFC94D';c.beginPath();c.arc(189+((b2%2)*8-4),110-((elPhase*40+b2*22)%50),3,0,7);c.stroke();
+    }
+  }
+  c.fillStyle='#9FB2CC';c.font='11px sans-serif';c.textAlign='left';
+  c.fillText(on?'Cu²⁺→阴极，Cl⁻→阳极':'需 U ≥ 1.2 V 才能驱动非自发反应',20,20);
+  if(on)elPhase+=0.01+volt*0.008;
+}
+
+/* ============ 动画主循环 ============ */
+function loop(){
+  if(current==='rate')drawRate();
+  else if(current==='galvanic')drawGalvanic();
+  else if(current==='electrolysis')drawElectrolysis();
+  requestAnimationFrame(loop);
+}
+drawThermo();drawHess();drawRate();drawEquil();drawDirect();drawIonize();drawPH();drawHydrolysis();drawKsp();drawGalvanic();drawElectrolysis();
+/* 滑杆绑定兜底：全部集中注册，杜绝漏绑 */
+var SLIDER_DRAW={sH1:drawHess,sH2:drawHess,sRT:drawRate,sET:drawEquil,sEP:drawEquil,sEN:drawEquil,sDH:drawDirect,sDS:drawDirect,sDT:drawDirect,sIC:drawIonize,sIT:drawIonize,sPH2:drawPH,sPT:drawPH,sHC:drawHydrolysis,sKA:drawKsp,sKC:drawKsp,sGA:drawGalvanic,sEV2:drawElectrolysis};
+Object.keys(SLIDER_DRAW).forEach(function(id){document.getElementById(id).oninput=SLIDER_DRAW[id];});
+document.getElementById('tR1').onclick=function(){thermoR=0;this.classList.add('on');document.getElementById('tR2').classList.remove('on');document.getElementById('tR3').classList.remove('on');drawThermo();};
+document.getElementById('tR2').onclick=function(){thermoR=1;this.classList.add('on');document.getElementById('tR1').classList.remove('on');document.getElementById('tR3').classList.remove('on');drawThermo();};
+document.getElementById('tR3').onclick=function(){thermoR=2;this.classList.add('on');document.getElementById('tR1').classList.remove('on');document.getElementById('tR2').classList.remove('on');drawThermo();};
+document.getElementById('raNo').onclick=function(){rateCat=false;this.classList.add('on');document.getElementById('raCat').classList.remove('on');drawRate();};
+document.getElementById('raCat').onclick=function(){rateCat=true;this.classList.add('on');document.getElementById('raNo').classList.remove('on');drawRate();};
+var hyIdx=0;
+var HY_IDS=['hyNaCl','hyNH4Cl','hyAcNa','hyNa2CO3'];
+HY_IDS.forEach(function(id,ix){
+  document.getElementById(id).onclick=function(){hyIdx=HY_IDS.indexOf(id);HY_IDS.forEach(function(x){document.getElementById(x).classList.remove('on');});this.classList.add('on');drawHydrolysis();};
+});
+loop();</script>
+</body>
+</html>
