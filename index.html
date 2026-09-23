@@ -304,6 +304,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
           <div class="r">负极：Zn − 2e⁻ = Zn²⁺</div>
           <div class="r">正极：2H⁺ + 2e⁻ = H₂↑</div>
           <div class="r">电子流向：<b id="gaDir">Zn → 导线 → Cu</b></div>
+          <div class="r">c(H⁺) = 2c(H₂SO₄) = <b id="gaH">1.0</b> mol/L</div>
+          <div class="r">反应剧烈程度（相对 0.5 mol/L 基准）：<b id="gaRate">1.0</b>×</div>
         </div>
         <div class="ctrl">
           <div class="crow"><label>硫酸浓度（mol/L）</label><input type="range" id="sGA" min="0.1" max="2" step="0.1" value="0.5"><span class="val" id="vGA">0.5</span></div>
@@ -366,7 +368,17 @@ document.querySelectorAll('.topic').forEach(function(tp){
     };
   });
 });
-function V(id){return +document.getElementById(id).value;}
+var STEP_DEC={};
+document.querySelectorAll('input[type=range]').forEach(function(el){
+  var st=el.getAttribute('step')||'1';
+  STEP_DEC[el.id]=(String(st).split('.')[1]||'').length;
+});
+function V(id){
+  var el=document.getElementById(id);
+  var m=document.getElementById('v'+id.slice(1)); /* 滑杆镜像读数：读值即同步，杜绝"拖杆数值不动" */
+  if(m){var d=STEP_DEC[id];m.textContent=(d===undefined)?el.value:(+el.value).toFixed(d);}
+  return +el.value;
+}
 function W(id,v){document.getElementById(id).textContent=v;}
 function sup(n){var m={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};var s=String(n),o='';for(var i=0;i<s.length;i++)o+=m[s[i]]||'';return o;}
 function sci(v,d){ /* 科学计数 "1.0×10⁻⁷" */
@@ -665,6 +677,8 @@ var gaPhase=0;
 function drawGalvanic(){
   var acid=V('sGA');
   W('gaDir','Zn → 导线 → Cu');
+  W('gaH',(acid*2).toFixed(1)); /* 稀硫酸二元强酸：c(H⁺)=2c */
+  W('gaRate',(acid/0.5).toFixed(1)); /* 速率∝c(H⁺)，以 0.5 mol/L 为基准 */
   var cv=document.getElementById('cvGa'),c=cv.getContext('2d');
   c.clearRect(0,0,560,260);
   /* 烧杯 */
